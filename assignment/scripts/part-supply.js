@@ -41,21 +41,37 @@ for(let i=0; i<supplyChanges.length; i++){
     }
 }
 // I think this follows the instructions, but it made me wonder if there is a way to
-// make the 6 positive only in the log output so it would say "Removed 6 parts"
-// instead of "Removed -6 parts" without changing the actual value to positive.
+// make the 6 positive ONLY in the log output so it would read out "Removed 6 parts"
+// instead of "Removed -6 parts" without changing the actual value of the variable.
 
 // STRETCH GOALS
 console.log('---  Stretch Goals  ---');
 // 7. Rewrite the `for` loop from #6 as a `for of` loop. 
 console.log('7. Showing supplyChanges with "for of" loop');
-
-
-
-
+for(qtyAdj of supplyChanges){
+    if(qtyAdj>0){
+        console.log('Added', qtyAdj, 'parts.');
+    }
+    if(qtyAdj==0){
+        console.log('No change.');
+    }
+    if(qtyAdj<0){
+        console.log('Removed', qtyAdj, 'parts.');
+    }
+}
 
 // 8. Write a loop to determine the total number of parts available by
 //    adding up all the numbers in the 'supplyChanges' array.
 console.log('8. Total supplies available is:');
+let sum = 0;
+for (const value of supplyChanges) {
+  sum += value;
+}
+console.log(sum);
+//I was able to find this via Googling and adapt it to work here, but I am a little
+//fuzzy on the first part in a for loop - in this example, how does it know what
+//"value" is pointing to, since I haven't used/assigned that name anywhere previously?
+// Does that part of a for loop just always point to the items in the named array?
 
 // 9. We have a large stash of parts in our warehouse that we 
 //    need to box up and get ready for shipment. 
@@ -64,3 +80,7 @@ console.log('8. Total supplies available is:');
 //    no more boxes can be filled.
 //    Then log how many boxes were filled, and how many parts are left over.
 console.log('9. Filling boxes with a "while" loop');
+
+//I'm out of time for today, but I've copied this last problem into my notes
+//to try later, because I need more loop-writing practice! Right now each one
+//feels new/puzzling and I have to reference notes every time.
